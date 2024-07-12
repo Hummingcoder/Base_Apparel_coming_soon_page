@@ -27,5 +27,5 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [here]()
-- Live Site URL: [here]()
+- Solution URL: [here](https://www.frontendmentor.io/solutions/base-apparel-coming-soon-page-GvCh854bT5)
+- Live Site URL: [here](https://hummingcoder.github.io/Base_Apparel_coming_soon_page/)
