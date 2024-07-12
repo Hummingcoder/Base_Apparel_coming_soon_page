@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="logo_container">
+        <img src="images/logo.svg" alt="" class="logo" />
+      </section>
+      <section class="hero_img"></section>
+      <section class="hero_txt">
+        <h1>
+          <span class="thin">We're</span> <br />
+          coming <br />
+          soon
+        </h1>
+        <p>
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+        <form class="">
+          <input type="email" placeholder="Email Address" />
+          <img src="images/icon-error.svg" alt="" class="err" />
+          <button type="submit">
+            <img src="images/icon-arrow.svg" alt="" />
+          </button>
+          <span class="err_txt"></span>
+        </form>
+      </section>
+    </main>
+
+    <!--   
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer> -->
+    <script>
+      const form = document.querySelector("form");
+      const input = document.querySelector("input");
+
+      form.addEventListener("submit", (e) => {
+        console.log("sub");
+        let sub = true;
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (input.value.trim() === "") {
+          sub = false;
+          form.classList.add("error");
+          form.querySelector(".err_txt").innerHTML = "Email cannot be empty";
+        } else if (!emailPattern.test(input.value)) {
+          sub = false;
+          form.classList.add("error");
+          form.querySelector(".err_txt").innerHTML =
+            "Please provide a valid email";
+        }
+
+        if (!sub) {
+          e.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>
